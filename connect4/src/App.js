@@ -18,19 +18,19 @@ class App extends React.Component {
     }
     let self = this
     this.state.socket.on('board',board => {
-      this.setState(...self.state, {board: board})
+      this.setState( {board: board})
     });
     this.state.socket.on('color', color => {
-      this.setState(...self.state, {color: color})
+      this.setState({color: color})
     }); 
     this.state.socket.on('turn', player => {
       if(player === this.state.color){
-        this.setState(...self.state,
+        this.setState(
                       {message: "You're up. What's your move?",
                     yourTurn: true})
       }
       else{
-        this.setState(...self.state,
+        this.setState(
                       {message: player + ' is thinking...',
                     yourTurn: false})
       }
@@ -42,7 +42,7 @@ class App extends React.Component {
       }else{
         newState['message'] = 'You Lose :('
       }
-      this.setState(...self.state, newState)
+      this.setState(newState)
     });
   }
 

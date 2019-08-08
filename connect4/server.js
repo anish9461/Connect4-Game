@@ -66,7 +66,7 @@ function checkVictory(i, j){
     }
 
     //count down
-    for(let k = 1;K < 4;++k){
+    for(let k = 1;k < 4;++k){
         if(i + k > 5){
             break  //lower bound of the board
         }
@@ -181,7 +181,7 @@ socket.on('click', function(column){
     }
 
     //Ignore clicks before both players are connected
-    if((players['red'] == null) (players['yellow'] == null)){
+    if((players['red'] == null) || (players['yellow'] == null)){
         console.log('Click before all players are connected')
         return
     }
@@ -211,13 +211,6 @@ socket.on('click', function(column){
     io.emit('turn',player)
 })
 })
-
-
-
-
-
-
-
 
 
 reset()
