@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import InfoBar from './components/InfoBar'
 import Board from './components/Board'
@@ -16,7 +15,7 @@ class App extends React.Component {
       message: 'Waiting for another player...',
       yourTurn: false
     }
-    let self = this
+    //let self = this
     this.state.socket.on('board',board => {
       this.setState( {board: board})
     });
